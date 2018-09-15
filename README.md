@@ -45,6 +45,7 @@ deploy$ sudo -u postgres createuser -s deploy
 deploy$ sudo -u postgres psql
 postgres=# \password deploy 
 postgres-# \q
+deploy$ sudo -u postgres createdb -O deploy rails_ci_cd_production
 
 deploy$ sudo apt-get install nginx
 deploy$ sudo rm /etc/nginx/sites-available/default
@@ -59,6 +60,21 @@ setgid deployer
 
 deploy$ sudo cp puma.conf puma-manager.conf /etc/init
 deploy$ sudo touch /etc/puma.conf
+
+
+deploy$ sudo vim  /etc/environment
+# copy and paste below
+export SECRET_KEY_BASE=fd0cc2dd5f8e86957c5797b0d1c144a35ed1897455b6ec66a80ddcdf32c0ce253a348a19950e00b925d0c327093fa58f3040271103f9d28f488b7fcfe5fa7fa8
+ruby -e 'p ENV["SECRET_KEY_BASE"]'
+
+export RAILS_CI_CD_DATABASE_PASSWORD=deploy
+ruby -e 'p ENV["RAILS_CI_CD_DATABASE_PASSWORD"]'
+#
+$ exit
+$ su - deploy
+$ echo $SECRET_KEY_BASE
+$ echo $RAILS_CI_CD_DATABASE_PASSWORD
+$ sudo service nginx restart
 ```
 ### local 
 ```
