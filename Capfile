@@ -27,6 +27,9 @@ require 'capistrano/upload-config'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx
 
+require 'sshkit/sudo'
+
+
 # Include tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
