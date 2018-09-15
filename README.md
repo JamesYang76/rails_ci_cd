@@ -54,8 +54,8 @@ deploy$ wget https://raw.githubusercontent.com/puma/puma/master/tools/jungle/ups
 
 deploy$ vim puma.conf
 # Set below
-setuid deployer
-setgid deployer
+setuid deploy
+setgid deploy
 # 
 
 deploy$ sudo cp puma.conf puma-manager.conf /etc/init
