@@ -84,6 +84,7 @@ config/deploy/templates/puma.rb.erb
 $ cap production puma:nginx_config
 $ cp ./config/puma.rb ./config/puma/production.rb
 
+# git commit update to git hub
 ```
 
 ### source
