@@ -59,8 +59,10 @@ setgid deploy
 # 
 
 deploy$ sudo cp puma.conf puma-manager.conf /etc/init
-deploy$ sudo touch /etc/puma.conf
-
+deploy$ sudo vim /etc/puma.conf
+# copy and paste
+/home/deploy/rails_ci_cd
+#
 
 deploy$ sudo vim  /etc/environment
 # copy and paste below
@@ -75,6 +77,9 @@ $ su - deploy
 $ echo $SECRET_KEY_BASE
 $ echo $RAILS_CI_CD_DATABASE_PASSWORD
 $ sudo service nginx restart
+
+
+
 ```
 ### local 
 ```

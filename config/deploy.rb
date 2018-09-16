@@ -38,7 +38,6 @@ namespace :deploy do
   before 'check:linked_files', 'puma:config'
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  after  :finishing,    'puma:restart'
 
   desc 'Restart nginx'
   task :restart do
