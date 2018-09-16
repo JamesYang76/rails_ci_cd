@@ -123,3 +123,6 @@ end
 production:
   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>  
 ```
+
+refer to 
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04
